@@ -16,11 +16,8 @@ public class StackShould {
 		stack.push(firstPushedObject);
 		stack.push(secondPushedObject);
 		
-		Object firstPoppedObject = stack.pop();
-		Object secondPoppedObject = stack.pop();
-		
-		assertThat(firstPoppedObject, is(secondPushedObject));
-		assertThat(secondPoppedObject, is(firstPushedObject));
+		assertThat(stack.pop(), is(secondPushedObject));
+		assertThat(stack.pop(), is(firstPushedObject));
 	}
 	
 	@Test(expected = IndexOutOfBoundsException.class)
